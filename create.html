@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать пост - Новогодний Форум</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <!-- Снежинки как в index.html -->
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🎅 Новогодний Пост</h1>
+            <nav class="nav">
+                <span id="user-greeting" class="user-greeting"></span>
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="profile.html" class="nav-link">Профиль</a>
+                <button id="logout-btn" class="btn btn-outline" style="display: none;">Выйти</button>
+                <a href="login.html" id="login-btn" class="btn btn-primary">Войти</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h2 class="form-title">Поделитесь новогодним настроением! 🎄</h2>
+            <form id="create-post-form">
+                <div class="form-group">
+                    <label class="form-label" for="content">Ваше сообщение:</label>
+                    <textarea id="content" name="content" class="form-textarea" 
+                              placeholder="Расскажите о своих новогодних планах, поделитесь рецептом оливье или просто поздоровайтесь!"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="image">Добавить изображение (опционально):</label>
+                    <input type="file" id="image" name="image" class="form-file" accept="image/*">
+                    <small style="display: block; margin-top: 0.5rem; color: #666;">
+                        Поддерживаются: JPG, PNG, GIF (макс. 5MB)
+                    </small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Опубликовать
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
